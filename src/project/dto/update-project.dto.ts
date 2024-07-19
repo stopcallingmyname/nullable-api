@@ -1,9 +1,19 @@
-import { IsOptional, IsString, IsArray, ArrayMinSize } from 'class-validator';
+import {
+  IsOptional,
+  IsString,
+  IsArray,
+  ArrayMinSize,
+  IsNotEmpty,
+} from 'class-validator';
 
 export class UpdateProjectDto {
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  title?: string;
+  preview_url: string;
+
+  @IsNotEmpty()
+  @IsString()
+  title: string;
 
   @IsOptional()
   @IsString()

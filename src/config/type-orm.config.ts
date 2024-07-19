@@ -3,11 +3,12 @@ import {
   TypeOrmModuleAsyncOptions,
   TypeOrmModuleOptions,
 } from '@nestjs/typeorm';
-import { User } from '@app/entity/user';
+import { User } from '@app/entities/user.entity';
 import { EnvVariable } from '@app/enum/env-variable.enum';
-import { Profile } from '@app/entity/profile';
-import { Tag } from '@app/entity/tag';
-import { Project } from '@app/entity/project';
+import { Profile } from '@app/entities/profile.entity';
+import { Tag } from '@app/entities/tag';
+import { Project } from '@app/entities/project.entity';
+import { Subscription } from '@app/entities/subscription.entity';
 
 export const typeOrmModuleAsyncOptions: TypeOrmModuleAsyncOptions = {
   useFactory: async (
@@ -19,7 +20,7 @@ export const typeOrmModuleAsyncOptions: TypeOrmModuleAsyncOptions = {
     username: configService.get<string>(EnvVariable.DataBaseUserName),
     password: configService.get<string>(EnvVariable.DataBasePassword),
     database: configService.get<string>(EnvVariable.DataBaseName),
-    entities: [User, Profile, Project, Tag],
+    entities: [User, Profile, Project, Tag, Subscription],
     synchronize: true,
   }),
   inject: [ConfigService],

@@ -10,11 +10,15 @@ import { getJWTConfig } from '@app/config/jwt.config';
 import { AuthService } from '@app/auth/auth.service';
 import { DataBaseModule } from '@app/database/database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '@app/entity/user';
+import { User } from '@app/entities/user.entity';
 import { UserRepository } from '@app/repositories/user.repository';
 import { LocalStrategy } from '@app/auth/strategies/local.strategy';
-import { Profile } from '@app/entity/profile';
+import { Profile } from '@app/entities/profile.entity';
 import { ProfileRepository } from '@app/repositories/profile.repository';
+import { GoogleStrategy } from './strategies/google.strategy';
+import { UserModule } from '@app/user/user.module';
+import { MailModule } from '@app/mail/mail.module';
+import { MailService } from '@app/mail/mail.service';
 
 @Module({
   controllers: [AuthController],
@@ -28,13 +32,17 @@ import { ProfileRepository } from '@app/repositories/profile.repository';
     DataBaseModule,
     TypeOrmModule.forFeature([User, Profile]),
     PassportModule,
+    UserModule,
+    MailModule,
   ],
   providers: [
     ConfigService,
     AuthService,
+    MailService,
     AccessTokenStrategy,
     RefreshTokenStrategy,
     LocalStrategy,
+    GoogleStrategy,
     UserRepository,
     ProfileRepository,
   ],

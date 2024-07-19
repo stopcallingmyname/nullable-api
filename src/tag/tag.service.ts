@@ -17,6 +17,16 @@ import {
 export class TagService {
   constructor(private readonly tagRepository: TagRepository) {}
 
+  async getAllTags() {
+    try {
+      return await this.tagRepository.findAll();
+    } catch (error) {
+      throw new InternalServerErrorException(
+        error.message || 'Error retrieving tags',
+      );
+    }
+  }
+
   async search(query: string, limit: number) {
     try {
       const tags = await this.tagRepository.findAll({

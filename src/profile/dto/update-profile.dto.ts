@@ -3,20 +3,35 @@ import { IsOptional, IsString, IsUrl } from 'class-validator';
 export class UpdateProfileDto {
   @IsString()
   @IsOptional()
-  name?: string;
+  full_name?: string;
   @IsString()
   @IsOptional()
-  surname?: string;
+  location?: string;
   @IsString()
   @IsOptional()
   bio?: string;
   @IsUrl()
   @IsOptional()
-  social_links?: string;
+  personal_website_url?: string;
   @IsUrl()
   @IsOptional()
-  portfolio_url?: string;
+  twitter_url?: string;
   @IsUrl()
   @IsOptional()
-  avatar_url?: string;
+  facebook_url?: string;
+  @IsUrl()
+  @IsOptional()
+  instagram_url?: string;
+  @IsUrl()
+  @IsOptional()
+  github_url?: string;
+  @IsUrl()
+  @IsOptional()
+  behance_url?: string;
+  @IsUrl()
+  @IsOptional()
+  linkedIn_url?: string;
+  @IsUrl()
+  @IsOptional()
+  vimeo_url?: string;
 }

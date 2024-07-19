@@ -1,4 +1,4 @@
-import { Role } from '@app/entity/user';
+import { Role } from '@app/entities/user.entity';
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Observable } from 'rxjs';
 

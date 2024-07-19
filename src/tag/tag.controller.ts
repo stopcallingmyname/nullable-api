@@ -17,6 +17,11 @@ import { AdminGuard } from '@app/auth/guards/admin.guard';
 export class TagController {
   constructor(private readonly tagService: TagService) {}
 
+  @Get('all')
+  async getAllTags() {
+    return this.tagService.getAllTags();
+  }
+
   @Get()
   async search(@Query('query') query = '', @Query('limit') limit = 7) {
     return this.tagService.search(query, Number(limit));

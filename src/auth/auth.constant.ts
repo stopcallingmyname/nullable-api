@@ -8,3 +8,9 @@ export const USER_NOT_FOUND_LOGIN =
   'Oopsie! No user found with such username or email.';
 export const WRONG_PASSWORD =
   "Uh-oh! That password doesn't seem to be right. Please check and try again.";
+export const PROFILE_NOT_FOUND =
+  "Hmm... seems like the profile you're looking for is playing hide and seek.";
+export const INVALID_AVATAR_URL =
+  "Oops! Looks like the avatar URL you provided isn't quite right. Make sure it's a valid URL pointing to an image of your fabulous self!";
+export const AVATAR_ALREADY_DELETED =
+  'Oops! It looks like you have nothing to delete.';

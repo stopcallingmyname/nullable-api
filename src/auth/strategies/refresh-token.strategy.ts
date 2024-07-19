@@ -25,7 +25,7 @@ export class RefreshTokenStrategy extends PassportStrategy(
       jwtFromRequest: ExtractJwt.fromExtractors([
         RefreshTokenStrategy.extractTokenFromCookie,
       ]),
-      secretOrKey: configService.get(EnvVariable.RefreshTokenSecret),
+      secretOrKey: configService.get<string>(EnvVariable.RefreshTokenSecret),
     });
   }
 

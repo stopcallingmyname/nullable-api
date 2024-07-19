@@ -6,7 +6,7 @@ export const getJWTConfig = async (
   configService: ConfigService,
 ): Promise<JwtModuleOptions> => {
   return {
-    secret: configService.get(EnvVariable.AccessTokenSecret),
+    secret: configService.get<string>(EnvVariable.AccessTokenSecret),
     signOptions: {
       expiresIn: '15m',
     },

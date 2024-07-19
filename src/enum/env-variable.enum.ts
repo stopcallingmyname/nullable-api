@@ -8,4 +8,13 @@ export enum EnvVariable {
   IsDataBaseSynchronize = 'DB_SYNCHRONIZE',
   RefreshTokenSecret = 'REFRESH_TOKEN_SECRET',
   AccessTokenSecret = 'ACCESS_TOKEN_SECRET',
+  GoogleClientID = 'GOOGLE_CLIENT_ID',
+  GoogleClientSecret = 'GOOGLE_CLIENT_SECRET',
+  GoogleCallbackURL = 'GOOGLE_CALLBACK',
+  MailHost = 'MAIL_HOST',
+  MailUser = 'MAIL_USER',
+  MailPass = 'MAIL_PASS',
+  UploadcarePublicKey = 'UPLOADCARE_PUBLIC_KEY',
+  UploadcareSecretKey = 'UPLOADCARE_SECRET_KEY',
+  UploadcareBaseUrl = 'UPLOADCARE_BASE_URL',
 }

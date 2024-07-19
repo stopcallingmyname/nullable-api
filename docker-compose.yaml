@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: 'nullabledb_dev'
+      POSTGRES_USER: 'USER'
+      POSTGRES_PASSWORD: 'PASSWORD'
+    ports:
+      - '5432:5432'

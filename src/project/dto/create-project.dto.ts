@@ -1,4 +1,4 @@
-import { Tag } from '@app/entity/tag';
+import { Tag } from '@app/entities/tag';
 import {
   IsNotEmpty,
   IsString,
@@ -6,6 +6,7 @@ import {
   ArrayMinSize,
   IsOptional,
   IsUUID,
+  IsNumber,
 } from 'class-validator';
 
 export class CreateProjectDto {
@@ -25,7 +26,7 @@ export class CreateProjectDto {
   @IsArray()
   tags?: Tag[];
 
-  @IsNotEmpty()
-  @IsUUID()
-  profileId: string;
+  @IsOptional()
+  @IsNumber()
+  readonly timeSpent?: number;
 }
