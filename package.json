@@ -7,7 +7,6 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "heroku-postbuild": "npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nodemon",
     "start:prod": "node dist/main",
@@ -19,8 +18,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "engines": {
-    "node": ">=20.11.0",
-    "npm": ">=10.4.0"
+    "node": "20.x",
+    "npm": ">=10.7.0"
   },
   "dependencies": {
     "@nestjs-modules/mailer": "^2.0.2",
