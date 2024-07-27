@@ -94,5 +94,9 @@
   },
   "_moduleAliases": {
     "@app": "./dist"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": ">=10.7.0"
   }
 }
