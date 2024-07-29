@@ -19,6 +19,7 @@ import { User } from '@app/entities/user.entity';
 import { CurrentUser } from '@app/decorators/current-user.decorator';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { JwtService } from '@nestjs/jwt';
+import { Express } from 'express';
 
 @Controller('projects')
 export class ProjectController {
