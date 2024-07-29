@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "engines": {
-    "npm": "10.x"
+    "npm": "10.4.0",
+    "node": "20.11.0"
   },
   "author": "",
   "private": "false",
