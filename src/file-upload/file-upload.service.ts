@@ -1,8 +1,9 @@
 import { EnvVariable } from '@app/enum/env-variable.enum';
-import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { UploadClient } from '@uploadcare/upload-client';
 import axios from 'axios';
+import { Express } from 'express';
 
 @Injectable()
 export class FileUploadService {

@@ -19,6 +19,7 @@ import { LikeService } from '@app/like/like.service';
 import { ProfileRepository } from '@app/repositories/profile.repository';
 import { SubscriptionService } from '@app/subscription/subscription.service';
 import { Project } from '@app/entities/project.entity';
+import { Express } from 'express';
 
 @Injectable()
 export class ProjectService {
