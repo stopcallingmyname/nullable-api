@@ -7,11 +7,11 @@ import { Subscription } from './entities/subscription.entity';
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: 'dpg-cpl25dud3nmc73ddtv40-a',
-  database: 'guessby',
+  host: 'dpg-cqkm07lsvqrc73ednnv0-a',
+  database: 'nullable_dev_3vbh',
   port: 5432,
-  username: 'guessby_user',
-  password: 'xYC0KD0o5TWznzqsiBIhAzzKLEmPrDmh',
+  username: 'stopcallingmyname',
+  password: 'S9t7xLz7NojtH8XfQsHhwJzZaJzJEnMc',
   synchronize: false,
   entities: [User, Profile, Project, Tag, Subscription],
   migrations: ['src/migrations/*{.ts,.js}'],
