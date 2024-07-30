@@ -1,10 +1,43 @@
-version: '3.9'
+version: '3.8'
+
 services:
-  postgres:
-    image: postgres
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
     environment:
-      POSTGRES_DB: 'nullabledb_dev'
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      - DB_TYPE=${DB_TYPE}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_SYNCHRONIZE=${DB_SYNCHRONIZE}
+      - CLIENT_HOST=${CLIENT_HOST}
+      - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
+      - REFRESH_TOKEN_SECRET=${REFRESH_TOKEN_SECRET}
+      - JWT_EXPIRATION=${JWT_EXPIRATION}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_USER=${MAIL_USER}
+      - MAIL_PASS=${MAIL_PASS}
+      - UPLOADCARE_PUBLIC_KEY=${UPLOADCARE_PUBLIC_KEY}
+      - UPLOADCARE_SECRET_KEY=${UPLOADCARE_SECRET_KEY}
+      - UPLOADCARE_BASE_URL=${UPLOADCARE_BASE_URL}
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
