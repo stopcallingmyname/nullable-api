@@ -38,4 +38,4 @@ lerna-debug.log*
 .env
 
 # Database config
-data-source-production.ts
+src/data-source-production.ts

@@ -89,6 +89,6 @@ export class Profile {
   @Column({ type: 'boolean', default: false })
   open_to_work: boolean;
 
-  @Column({ length: 10, nullable: true })
-  native_language: string;
+  // @Column({ length: 10, nullable: true })
+  // native_language: string;
 }
