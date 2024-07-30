@@ -36,6 +36,3 @@ lerna-debug.log*
 
 # Environment variables
 .env
-
-# Database config
-src/data-source-production.ts
