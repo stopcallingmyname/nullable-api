@@ -140,12 +140,12 @@ export class AuthController {
 
     res.cookie('refresh_token', refresh_token, {
       httpOnly: true,
-      sameSite: false,
+      sameSite: 'none',
       secure: true,
     });
     res.cookie('access_token', access_token, {
       httpOnly: true,
-      sameSite: false,
+      sameSite: 'none',
       secure: true,
     });
 
@@ -163,8 +163,16 @@ export class AuthController {
   ) {
     const { refresh_token, access_token } = await this.authService.login(user);
 
-    res.cookie('refresh_token', refresh_token, { httpOnly: true });
-    res.cookie('access_token', access_token, { httpOnly: true });
+    res.cookie('refresh_token', refresh_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
+    res.cookie('access_token', access_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
 
     return {
       message: 'User logged in successfully',
@@ -180,8 +188,16 @@ export class AuthController {
     const { refresh_token, access_token } =
       await this.authService.authorizeWithGoogle(dto);
 
-    res.cookie('refresh_token', refresh_token, { httpOnly: true });
-    res.cookie('access_token', access_token, { httpOnly: true });
+    res.cookie('refresh_token', refresh_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
+    res.cookie('access_token', access_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
 
     return {
       message: 'User logged in with Google successfully',
@@ -198,8 +214,16 @@ export class AuthController {
       user.id,
     );
 
-    res.cookie('refresh_token', refresh_token, { httpOnly: true });
-    res.cookie('access_token', access_token, { httpOnly: true });
+    res.cookie('refresh_token', refresh_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
+    res.cookie('access_token', access_token, {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
 
     return {
       message: 'Token refreshed successfully',
@@ -216,8 +240,16 @@ export class AuthController {
   @UseGuards(AccessTokenAuthGuard)
   @Get('logout')
   async logout(@Res() res: Response) {
-    res.clearCookie('refresh_token', { httpOnly: true });
-    res.clearCookie('access_token', { httpOnly: true });
+    res.clearCookie('refresh_token', {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
+    res.clearCookie('access_token', {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
     res.status(200).json({ message: 'Logout successful' });
   }
 }

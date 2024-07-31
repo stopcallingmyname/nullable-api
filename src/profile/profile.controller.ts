@@ -74,7 +74,11 @@ export class ProfileController {
   @Delete()
   @UseGuards(AccessTokenAuthGuard)
   async delete(@CurrentUser() user: User, @Req() req: Request) {
-    req.res.clearCookie('refresh_token', { httpOnly: true });
+    req.res.clearCookie('refresh_token', {
+      httpOnly: true,
+      sameSite: 'none',
+      secure: true,
+    });
     return this.profileService.delete(user.profile.id);
   }
 
