@@ -90,26 +90,6 @@ export class Data1722373625784 implements MigrationInterface {
           ('93cf273b-6820-4045-92b5-3b5c9e621a22', 'e3fac421-2cb6-4989-843c-f70a613b6aa3');
       `);
 
-    // Вставка данных в таблицу project_tags
-    await queryRunner.query(`
-        INSERT INTO public.project_tags ("projectId", "tagId") VALUES
-          ('1e485a2e-1072-49e6-bc7b-4ab1afebd9ac', '517ea77e-da47-4c0b-be2d-125e128e56a2'),
-          ('1e485a2e-1072-49e6-bc7b-4ab1afebd9ac', 'b2e1f623-efbb-49a6-a4c2-9cacfe304c7f'),
-          ('1e485a2e-1072-49e6-bc7b-4ab1afebd9ac', '3877a170-ea81-4b42-b16e-5260cc32a752'),
-          ('1e485a2e-1072-49e6-bc7b-4ab1afebd9ac', 'adaeb691-dc87-4238-bd20-d2180a9d7487'),
-          ('1e485a2e-1072-49e6-bc7b-4ab1afebd9ac', '53416e33-e949-4beb-ba55-26bcecec8a7e'),
-          ('1efaa1cf-3a03-4bb5-a067-1bfb6de3d268', '53416e33-e949-4beb-ba55-26bcecec8a7e'),
-          ('1efaa1cf-3a03-4bb5-a067-1bfb6de3d268', 'b2e1f623-efbb-49a6-a4c2-9cacfe304c7f'),
-          ('1efaa1cf-3a03-4bb5-a067-1bfb6de3d268', '3877a170-ea81-4b42-b16e-5260cc32a752'),
-          ('1efaa1cf-3a03-4bb5-a067-1bfb6de3d268', 'adaeb691-dc87-4238-bd20-d2180a9d7487'),
-          ('1efaa1cf-3a03-4bb5-a067-1bfb6de3d268', '517ea77e-da47-4c0b-be2d-125e128e56a2'),
-          ('9d53978b-46f7-486b-bd5d-7c14670d179d', '53416e33-e949-4beb-ba55-26bcecec8a7e'),
-          ('9d53978b-46f7-486b-bd5d-7c14670d179d', 'b2e1f623-efbb-49a6-a4c2-9cacfe304c7f'),
-          ('9d53978b-46f7-486b-bd5d-7c14670d179d', '3877a170-ea81-4b42-b16e-5260cc32a752'),
-          ('9d53978b-46f7-486b-bd5d-7c14670d179d', 'adaeb691-dc87-4238-bd20-d2180a9d7487'),
-          ('9d53978b-46f7-486b-bd5d-7c14670d179d', '517ea77e-da47-4c0b-be2d-125e128e56a2');
-      `);
-
     // Вставка данных в таблицу projects_likes
     await queryRunner.query(`
         INSERT INTO public.projects_likes ("projectId", "profileId") VALUES
@@ -136,6 +116,5 @@ export class Data1722373625784 implements MigrationInterface {
     await queryRunner.query('DELETE FROM public.tags');
     await queryRunner.query('DELETE FROM public.profiles_skills_tags');
     await queryRunner.query('DELETE FROM public.projects');
-    await queryRunner.query('DELETE FROM public.project_tags');
   }
 }
