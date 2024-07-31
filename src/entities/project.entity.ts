@@ -23,7 +23,7 @@ export class Project {
   @Column({ length: 255, nullable: false })
   title: string;
 
-  @Column('text')
+  @Column({ length: 255, nullable: true })
   description: string;
 
   @ManyToOne(() => Profile, (profile) => profile.projects, {
