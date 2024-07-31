@@ -2,17 +2,6 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class Data1722373625784 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    // Вставка данных в таблицу users
-    await queryRunner.query(`
-      INSERT INTO public.users (id, username, email, password, role, "profileId") VALUES
-        ('13523f05-a606-4013-beab-63dc736b25be', 'stopcallingmyname', 'stopcallingmyname1337@gmail.com', '$2b$10$4ko9e0.z.Emz7AeQ5I0ZCu8OMarjO1EEyH05pLreibVDxKak03sa.', 'User', '530e9433-081a-47b0-9c99-bca2577f3709'),
-        ('b820eb86-83bc-4a8f-ab89-da6d214e5c7c', 'scout', 'x666rxse@gmail.com', '$2b$10$ciuZavc2Uujj9MjNVlgXNeP9xckMvwN/CttHo3X4B9pg3sCVi7FIi', 'User', '93cf273b-6820-4045-92b5-3b5c9e621a22'),
-        ('1c12e7c7-8f20-48ef-b91e-961755bf2f6e', 'jajaja', 'jajaja@gmail.com', '$2b$10$VJZb0e.rr/CLjh9yF18j2O6yrU0y21mEsYFjsdNwUH/3GYPt3PQ22', 'User', 'f10ab340-19ca-4d6b-81e7-562ef240995c'),
-        ('52282229-a2b2-473b-95a5-65815da731da', 'fakesideways', 'chocoloco926@gmail.com', '$2b$10$viNZvq3pb12C9akpwaPFhu8ucpqoIwpHUrNcbLETZ0h.kb3spI8FO', 'User', '3698ca08-1e3c-4dd4-9326-6cacef5138ae'),
-        ('2f4ed444-d641-49a4-80f9-7f7ad76be0a0', 'Nikita Haletsky', 'haletsky.nick@gmail.com', '$2b$10$F1Cx4bjuF1/Nxpjj422V1OeLlSxcVMkBEgECCtR54pVuq/16WVtyG', 'User', '87e8dda6-103c-40aa-8a81-313d913b3fdd'),
-        ('5478087f-b36c-4846-8de0-1a318bdaec01', 'nikita.haker06', 'x666koffman@gmail.com', '$2b$10$COkylIdg4yIX5Bw1TTtIV.z9Wn.ejVWNRRf7woz8QbhmEJThWbMtq', 'User', '47f9e306-c3d8-402f-9e06-d25a480aa071');
-    `);
-
     // Вставка данных в таблицу profiles
     await queryRunner.query(`
         INSERT INTO public.profiles (
@@ -28,6 +17,17 @@ export class Data1722373625784 implements MigrationInterface {
           ('f10ab340-19ca-4d6b-81e7-562ef240995c', '2024-05-26 17:46:56.750131', 'Marcus Peres', NULL, NULL, NULL, 'https://cdn.dribbble.com/users/24956/screenshots/17741010/media/b487f8753627459ab4462ff938181c2a.png?resize=1200x900&vertical=center', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'f', NULL),
           ('47f9e306-c3d8-402f-9e06-d25a480aa071', '2024-06-20 14:18:54.37704', '404Hacker', NULL, NULL, NULL, 'https://ucarecdn.com/1a8ae94a-1740-433c-a8d2-c5a3ac2b7576/', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'f', NULL);
       `);
+
+    // Вставка данных в таблицу users
+    await queryRunner.query(`
+      INSERT INTO public.users (id, username, email, password, role, "profileId") VALUES
+        ('13523f05-a606-4013-beab-63dc736b25be', 'stopcallingmyname', 'stopcallingmyname1337@gmail.com', '$2b$10$4ko9e0.z.Emz7AeQ5I0ZCu8OMarjO1EEyH05pLreibVDxKak03sa.', 'User', '530e9433-081a-47b0-9c99-bca2577f3709'),
+        ('b820eb86-83bc-4a8f-ab89-da6d214e5c7c', 'scout', 'x666rxse@gmail.com', '$2b$10$ciuZavc2Uujj9MjNVlgXNeP9xckMvwN/CttHo3X4B9pg3sCVi7FIi', 'User', '93cf273b-6820-4045-92b5-3b5c9e621a22'),
+        ('1c12e7c7-8f20-48ef-b91e-961755bf2f6e', 'jajaja', 'jajaja@gmail.com', '$2b$10$VJZb0e.rr/CLjh9yF18j2O6yrU0y21mEsYFjsdNwUH/3GYPt3PQ22', 'User', 'f10ab340-19ca-4d6b-81e7-562ef240995c'),
+        ('52282229-a2b2-473b-95a5-65815da731da', 'fakesideways', 'chocoloco926@gmail.com', '$2b$10$viNZvq3pb12C9akpwaPFhu8ucpqoIwpHUrNcbLETZ0h.kb3spI8FO', 'User', '3698ca08-1e3c-4dd4-9326-6cacef5138ae'),
+        ('2f4ed444-d641-49a4-80f9-7f7ad76be0a0', 'Nikita Haletsky', 'haletsky.nick@gmail.com', '$2b$10$F1Cx4bjuF1/Nxpjj422V1OeLlSxcVMkBEgECCtR54pVuq/16WVtyG', 'User', '87e8dda6-103c-40aa-8a81-313d913b3fdd'),
+        ('5478087f-b36c-4846-8de0-1a318bdaec01', 'nikita.haker06', 'x666koffman@gmail.com', '$2b$10$COkylIdg4yIX5Bw1TTtIV.z9Wn.ejVWNRRf7woz8QbhmEJThWbMtq', 'User', '47f9e306-c3d8-402f-9e06-d25a480aa071');
+    `);
 
     // Вставка данных в таблицу tags
     await queryRunner.query(`
