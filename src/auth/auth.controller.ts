@@ -138,8 +138,16 @@ export class AuthController {
     const { refresh_token, access_token } =
       await this.authService.register(dto);
 
-    res.cookie('refresh_token', refresh_token, { httpOnly: true });
-    res.cookie('access_token', access_token, { httpOnly: true });
+    res.cookie('refresh_token', refresh_token, {
+      httpOnly: true,
+      sameSite: false,
+      secure: true,
+    });
+    res.cookie('access_token', access_token, {
+      httpOnly: true,
+      sameSite: false,
+      secure: true,
+    });
 
     return {
       message: 'User registered successfully',
