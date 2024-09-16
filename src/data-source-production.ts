@@ -7,8 +7,8 @@ import { Subscription } from './entities/subscription.entity';
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: 'dpg-cqkm07lsvqrc73ednnv0-a',
-  database: 'nullable_dev_3vbh',
+  host: 'dpg-crjueol2ng1s73fl3s9g-a',
+  database: 'nullable_dev_tdct',
   port: 5432,
   username: 'stopcallingmyname',
   password: 'S9t7xLz7NojtH8XfQsHhwJzZaJzJEnMc',
