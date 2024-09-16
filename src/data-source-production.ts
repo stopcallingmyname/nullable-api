@@ -11,7 +11,7 @@ const dataSource = new DataSource({
   database: 'nullable_dev_tdct',
   port: 5432,
   username: 'stopcallingmyname',
-  password: 'S9t7xLz7NojtH8XfQsHhwJzZaJzJEnMc',
+  password: 'hc3Zb4JT0kmafezhT61eA147xBIe7A5t',
   synchronize: false,
   entities: [User, Profile, Project, Tag, Subscription],
   migrations: ['src/migrations/*{.ts,.js}'],
