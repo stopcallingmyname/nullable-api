@@ -45,7 +45,6 @@ export class Profile {
 
   @ManyToMany(() => Project, (project) => project.likedBy, {
     nullable: true,
-    // cascade: true,
   })
   likedProjects: Project[];
 

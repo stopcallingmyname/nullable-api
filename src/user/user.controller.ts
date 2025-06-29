@@ -5,6 +5,7 @@ import {
   Inject,
   Param,
   Patch,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { AccessTokenAuthGuard } from '@app/auth/guards/access-token.guard';
@@ -28,6 +29,11 @@ export class UserController {
   @Get()
   async getById(@CurrentUser() user: User) {
     return this.userService.getById(user.id);
+  }
+
+  @Get('profile_id=:id')
+  async getByProfileId(@Param('id') id) {
+    return this.userService.getByProfileId(id);
   }
 
   @Patch()

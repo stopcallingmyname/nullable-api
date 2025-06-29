@@ -425,6 +425,7 @@ export class AuthService {
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: clientId,
+      clockTolerance: 5,
     });
     const payload = ticket.getPayload();
     return payload;

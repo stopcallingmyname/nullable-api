@@ -53,6 +53,26 @@ export class UserService {
     }
   }
 
+  async getByProfileId(profileId: string): Promise<Partial<User>> {
+    try {
+      const user = await this.userRepository.findByCondition({
+        where: {
+          profile: { id: profileId },
+        },
+        relations: ['profile'],
+      });
+
+      if (!user) {
+        throw new NotFoundException(USER_NOT_FOUND);
+      }
+
+      const { password, role, ...safeUser } = user;
+      return safeUser;
+    } catch (error) {
+      throw new NotFoundException(USER_NOT_FOUND);
+    }
+  }
+
   async update(userId: string, dto: UpdateUserDto): Promise<User> {
     try {
       const updatedUser = this.userRepository.create(dto);
